@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee add new data</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <h1>Employee</h1>
+    <hr>
+    <h2>
+        Employee Create
+    </h2>
+    <form action="#" th:action="@{/saveEmployee}" th:object=" ${employee}" method="post">
+        <label>FirstName:</label>
+        <input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-3 col-3">
+        <label>Last Name:</label>
+        <input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-3 col-3">
+        <label>Email:</label>
+        <input type="text" th:field="*{email}" placeholder="email" class="form-control mb-3 col-3">
+        <label>Mobile Number:</label>
+        <input type="text" th:field="*{mobile}" placeholder="mobile" class="form-control mb-3 col-3" pattern="[0-9]{10}"
+               maxlength="10" required>
+        <label>Date Of Birth:</label>
+        <input type="date" th:field="*{dob}" placeholder="dob" class="form-control mb-3 col-3">
+        <label>Address:</label>
+        <input type="text" th:field="*{address}" placeholder="address" class="form-control mb-4 col-4">
+
+
+        <button type="submit" class="btn btn-info col=2">save Employee</button>
+    </form>
+    <hr>
+    <a th:href="@{/}">Back to employee List</a>
+</div>
+
+</body>
+</html>
